@@ -60,6 +60,34 @@ function getPlayerSelection() {
 */
 
 function playRound(playerSelection, computerSelection){
+    // Check tie scenario
+    if (playerSelection === computerSelection) {
+        return `Game is a Tie. You both picked ${playerSelection}`;
     
-    console.log('still figuring it out');
+    // check non tie scenarios
+    } else if (playerSelection === 'rock'){
+        if (computerSelection === 'scissors') {
+            return 'You win. Rock beats Scissors';
+        } else {//computerSelection must be paper
+            return 'You lose. Paper beats Rock';
+        }
+    } else if (playerSelection === 'paper'){
+        if (computerSelection === 'rock') {
+            return 'You win. Paper beats Rock';
+        } else {//computerSelection must be scissors
+            return 'You lose. Scissors beats Paper';
+        }
+    } else if (playerSelection === 'scissors'){
+        if (computerSelection === 'paper') {
+            return 'You win. Scissors beats Paper';
+        } else {//computerSelection must be rock
+            return 'You lose. Rock beats Scissors';
+        }
+    }
 }
+
+choice1 = getComputerChoice();
+choice2 = getComputerChoice();
+console.log(`playerChoice is ${choice1}`);
+console.log(`compChoice is ${choice2}`);
+console.log(playRound(choice1, choice2));
