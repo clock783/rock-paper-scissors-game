@@ -86,8 +86,17 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-choice1 = getComputerChoice();
-choice2 = getComputerChoice();
-console.log(`playerChoice is ${choice1}`);
-console.log(`compChoice is ${choice2}`);
-console.log(playRound(choice1, choice2));
+function game() {
+    for (let i=0; i<5; i++){
+        console.log('to be done');
+    }
+}
+
+
+
+//testing playRound
+// choice1 = getComputerChoice();
+// choice2 = getComputerChoice();
+// console.log(`playerChoice is ${choice1}`);
+// console.log(`compChoice is ${choice2}`);
+// console.log(playRound(choice1, choice2));
