@@ -47,7 +47,7 @@ function getPlayerSelection() {
     if (!((input === 'rock') || (input === 'paper') || (input === 'scissors'))) {
         // if input is not accepted, recurse function with different prompt
         // console.log('no match');
-        getPlayerSelection();
+        return getPlayerSelection();
         // Need to change the message prompt if it is a retry
     } else {
         // console.log('its a match!');
@@ -87,16 +87,45 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game() {
+
+    let playerWins = 0;
+    let compWins = 0;
+    let ties = 0;
+
+    console.log('You have started the Game\nYou will play five rounds')
     for (let i=0; i<5; i++){
-        console.log('to be done');
+        console.log(`Round ${i+1}`);
+        let compSelection = getComputerChoice();
+        console.log('   Computer has made selection\n   Your turn');
+        //re-initialize prompt message in playerSelection() on each loop
+        isFirstPrompt = true;
+        let playerSelection = getPlayerSelection();
+        console.log(`   You chose ${playerSelection}`);
+        console.log(`   Playing Round ${i+1}...`);
+        let result = playRound(playerSelection, compSelection);
+        console.log(`   ${result}`);
+
+        //check for winner and update counters
+        if (result.search('win') != -1) {
+            playerWins++;
+        } else if (result.search('lose') != -1) {
+            compWins++;
+        } else {
+            //should be a tie at this point
+            ties++;
+        }
+        console.log(`   You've won: ${playerWins}\n   Computer has won: ${compWins}\n   Ties: ${ties}`);
+    }
+
+    //declare winner
+    if (playerWins > compWins) {
+        console.log('Cogratulations! You win the Game.');
+    } else if (playerWins < compWins) {
+        console.log ('Womp womp :( You lose.');
+    } else {
+        //must be a tie
+        console.log('Game was a tie.');
     }
 }
 
-
-
-//testing playRound
-// choice1 = getComputerChoice();
-// choice2 = getComputerChoice();
-// console.log(`playerChoice is ${choice1}`);
-// console.log(`compChoice is ${choice2}`);
-// console.log(playRound(choice1, choice2));
+game()
