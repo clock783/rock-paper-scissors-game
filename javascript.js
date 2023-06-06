@@ -65,8 +65,8 @@ function game() {
     let compWins = 0;
     let ties = 0;
 
-    console.log('You have started the Game\nYou will play five rounds')
-    for (let i=0; i<5; i++){
+    console.log('You have started the Game\nYou will play one round')//removed five rounds of game play
+    for (let i=0; i<1; i++){//removed five rounds of gameplay
         console.log(`Round ${i+1}`);
         let compSelection = getComputerChoice();
         console.log('   Computer has made selection\n   Your turn');
@@ -99,6 +99,24 @@ function game() {
         //must be a tie
         console.log('Game was a tie.');
     }
+    return ;
 }
 
-// game()
+//add events to buttons
+const rockBtn = document.querySelector('#rock');
+rockBtn.addEventListener('click', () => {
+    console.log(playRound('rock',getComputerChoice()));
+});
+
+const paperBtn = document.querySelector('#paper');
+paperBtn.addEventListener('click', () => {
+    console.log(playRound('paper',getComputerChoice()));
+});
+
+const scissorsBtn = document.querySelector('#scissors');
+scissorsBtn.addEventListener('click', () => {
+    console.log(playRound('scissors',getComputerChoice()));
+});
+
+
+
