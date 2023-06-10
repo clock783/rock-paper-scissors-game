@@ -11,6 +11,7 @@
         <!-- site header/banner -->
         <h1>Rock Paper Scissor</h1>
         <ul>
+            <li><a href="#">Play</a></li>
             <li><a href="#">How to Play</a></li>
             <li><a href="#">About</a></li>
         </ul>
@@ -18,12 +19,12 @@
     
     <div>
         <!-- game play section-->
-        <div> Round 1</div>
+        <div id="round"> Round 1</div>
     </div>
     <div>
         <!-- player side -->
         <h2>Player Side</h2>
-        <div> Your score: 0</div>
+        <div id="myScore"> Your score: 0</div>
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
@@ -32,15 +33,26 @@
     <div>
         <!-- computer side -->
         <h2>Computer Side</h2>
-        <div>Computer Score: 0</div>
+        <div id="compScore">Computer Score: 0</div>
         <div>Computer selected: </div>
         <div>Message: Waiting for computer</div>
+    </div>
+    <br>
+    <br>
+    <div id="gameMsg">
+        <!--
+            gameplay message: can be:
+            Tie!
+            Computer won this round
+            You won this round
+        -->
+        Gameplay Message: 
     </div>
     <div>
         <!-- bottom banner -->
         <br>
-        Copyright &copy; clock783 <a href="##">Github Link</a>
+        Copyright &copy; clock783 <a href="https://github.com/clock783">Github Link</a>
     </div>
-    <script src="javascript.js"></script>
+    <script src="javascript.js" target="_blank" rel="noopener noreferrer"></script>
 </body>
 </html>
