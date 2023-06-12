@@ -8,7 +8,27 @@
 let round = 1;
 let playerScore = 0;
 let computerScore = 0;
+let compWeapon;
+let playerWeapon;
 
+//select weapons
+const rockBtn = document.querySelector('#rock');
+rockBtn.addEventListener('click', () => {
+    playerWeapon='rock';
+    console.log(playerWeapon);
+})
+
+const paperBtn = document.querySelector('#paper');
+paperBtn.addEventListener('click', () => {
+    playerWeapon='paper';
+    console.log(playerWeapon);
+});
+
+const scissorsBtn = document.querySelector('#scissors');
+scissorsBtn.addEventListener('click', () => {
+    playerWeapon='scissors';
+    console.log(playerWeapon);
+});
 
 
 function getComputerChoice() {
@@ -19,10 +39,10 @@ function getComputerChoice() {
 
 function updateScores() {
     const myScore = document.querySelector('#myScore');
-    myScore.textContent = `Your score: ${playerScore}`;
+    myScore.textContent = `YOUR SCORE: ${playerScore}`;
 
     const compScore = document.querySelector('#compScore');
-    compScore.textContent = `Computer Score: ${computerScore}`;
+    compScore.textContent = `COMPUTER'S SCORE: ${computerScore}`;
 }
 
 function updateRound(){
@@ -32,6 +52,7 @@ function updateRound(){
 }
 
 function updateMessage(winner){
+    //update gameplay message
     const gameMsg = document.querySelector('#gameMsg');
     if (winner === 'none'){
         gameMsg.textContent = `Tie!`;
@@ -40,6 +61,13 @@ function updateMessage(winner){
     } else if (winner === 'computer'){
         gameMsg.textContent = `Computer won this round 😞`;
     }
+
+    //update player message
+    const compScore = document.querySelector('#compScore');
+
+
+    //update computer message
+
 }
 
 function playRound(playerSelection, computerSelection){
@@ -79,24 +107,6 @@ function playRound(playerSelection, computerSelection){
     
     return `Computer chose ${computerSelection}\nYou chose ${playerSelection}\nWinner is ${winner}\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`;
 }
-
-
-
-//add events to buttons
-const rockBtn = document.querySelector('#rock');
-rockBtn.addEventListener('click', () => {
-    console.log(playRound('rock',getComputerChoice()));
-});
-
-const paperBtn = document.querySelector('#paper');
-paperBtn.addEventListener('click', () => {
-    console.log(playRound('paper',getComputerChoice()));
-});
-
-const scissorsBtn = document.querySelector('#scissors');
-scissorsBtn.addEventListener('click', () => {
-    console.log(playRound('scissors',getComputerChoice()));
-});
 
 
 
