@@ -8,26 +8,25 @@
 let round = 1;
 let playerScore = 0;
 let computerScore = 0;
-let compWeapon;
-let playerWeapon;
+
 
 //select weapons
 const rockBtn = document.querySelector('#rock');
 rockBtn.addEventListener('click', () => {
-    playerWeapon='rock';
-    console.log(playerWeapon);
+    // playerWeapon='rock';
+    playRound('rock', getComputerChoice());
 })
 
 const paperBtn = document.querySelector('#paper');
 paperBtn.addEventListener('click', () => {
-    playerWeapon='paper';
-    console.log(playerWeapon);
+    playRound('paper', getComputerChoice());
+    // console.log(playerWeapon);
 });
 
 const scissorsBtn = document.querySelector('#scissors');
 scissorsBtn.addEventListener('click', () => {
-    playerWeapon='scissors';
-    console.log(playerWeapon);
+    playRound('scissors', getComputerChoice());
+    // console.log(playerWeapon);
 });
 
 
@@ -108,7 +107,11 @@ function playRound(playerSelection, computerSelection){
     return `Computer chose ${computerSelection}\nYou chose ${playerSelection}\nWinner is ${winner}\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`;
 }
 
+//end game will be called after first to three
+function endGame(){
+    
+}
 
-
+//game();
 
 
