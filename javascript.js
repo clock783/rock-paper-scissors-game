@@ -52,7 +52,7 @@ function updateRound(){
 
 function updateMessage(winner){
     //update gameplay message
-    const gameMsg = document.querySelector('#gameMsg');
+    let gameMsg = document.querySelector('#gameMsg');
     if (winner === 'none'){
         gameMsg.textContent = `Tie!`;
     } else if (winner === 'player'){
@@ -70,46 +70,64 @@ function updateMessage(winner){
 }
 
 function playRound(playerSelection, computerSelection){
-    let winner;
-    //determine winner
-    if (playerSelection === computerSelection){
-        winner = "none";
-    } else if (playerSelection == 'rock') {
-        if (computerSelection === 'scissors'){
-            winner = "player";
-        } else {
-            winner = 'computer';
+    //run function if nobody has won
+    if ((compScore < 3) || (playerScore < 3)){
+        let winner;
+        //determine winner
+        if (playerSelection === computerSelection){
+            winner = "none";
+        } else if (playerSelection == 'rock') {
+            if (computerSelection === 'scissors'){
+                winner = "player";
+            } else {
+                winner = 'computer';
+            }
+        } else if (playerSelection == 'paper') {
+            if (computerSelection === 'rock'){
+                winner = "player";
+            } else {
+                winner = 'computer';
+            }
+        } else if (playerSelection == 'scissors') {
+            if (computerSelection === 'paper'){
+                winner = "player";
+            } else {
+                winner = 'computer';
+            }
         }
-    } else if (playerSelection == 'paper') {
-        if (computerSelection === 'rock'){
-            winner = "player";
-        } else {
-            winner = 'computer';
+        
+        //updateScores
+        if (winner === 'player'){
+            playerScore += 1;
+        } else if (winner === 'computer'){
+            computerScore += 1;
         }
-    } else if (playerSelection == 'scissors') {
-        if (computerSelection === 'paper'){
-            winner = "player";
-        } else {
-            winner = 'computer';
-        }
+        updateScores();
+        updateRound();
+        updateMessage(winner);
     }
-    
-    //updateScores
-    if (winner === 'player'){
-        playerScore += 1;
-    } else if (winner === 'computer'){
-        computerScore += 1;
+
+    if ((compScore === 3) || (playerScore === 3)){
+        endGame()
     }
-    updateScores();
-    updateRound();
-    updateMessage(winner);
     
     return `Computer chose ${computerSelection}\nYou chose ${playerSelection}\nWinner is ${winner}\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`;
 }
 
 //end game will be called after first to three
 function endGame(){
-    
+    //after first to three, declare Winner
+    let gameMsg = document.querySelector('#gameMsg');
+    let link = document.createElement('a');
+    link.setAttribute('href', '.');
+    link.textContent = 'Replay?';
+    if (compScore === 3) {
+        gameMsg.textContent = `Computer Won.`;
+        gameMsg.appendChild(link);
+    } else if (playerScore === 3){
+        gameMsg.textContent = `You won!!!`;
+        gameMsg.appendChild(link);
+    }
 }
 
 //game();
