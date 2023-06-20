@@ -8,7 +8,8 @@
 let round = 1;
 let playerScore = 0;
 let computerScore = 0;
-let numOfRounds = 5;
+let numOfRounds = 3;
+const roundX = document.querySelector('#round');
 
 
 //select weapons
@@ -44,9 +45,9 @@ function updateScores() {
     computerScoreMsg.textContent = `COMPUTER'S SCORE: ${computerScore}`;
 }
 
+
 function updateRound(){
     round += 1;
-    const roundX = document.querySelector('#round');
     roundX.textContent = `Round ${round}`;
 }
 
@@ -121,6 +122,7 @@ function endGame(){
         gameMsg.textContent = `You won!!!`;
         gameMsg.appendChild(link);
     }
+    roundX.textContent = 'Game Over';
 
 }
 
