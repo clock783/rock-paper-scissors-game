@@ -33,7 +33,8 @@ scissorsBtn.addEventListener('click', () => {
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     randomNum = Math.floor(Math.random()*3);
-    return choices[randomNum];
+    // return choices[randomNum];
+    return 'rock';
 }
 
 function updateScores() {
@@ -60,13 +61,6 @@ function updateMessage(winner){
     } else if (winner === 'computer'){
         gameMsg.textContent = `Computer won this round 😞`;
     }
-
-    //update player message
-    const compScore = document.querySelector('#compScore');
-
-
-    //update computer message
-
 }
 
 function playRound(playerSelection, computerSelection){
@@ -108,7 +102,7 @@ function playRound(playerSelection, computerSelection){
     }
 
     if ((compScore === 3) || (playerScore === 3)){
-        endGame()
+        endGame();
     }
     
     return `Computer chose ${computerSelection}\nYou chose ${playerSelection}\nWinner is ${winner}\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`;
