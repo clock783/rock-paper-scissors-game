@@ -1,0 +1,22 @@
+img {
+    width: 80px;
+    height: 80px;
+}
+
+button {
+    border: 1px solid black;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform .7s ease-in-out;
+    margin-left:0px;
+}
+
+.header > * {
+    border: 1px solid red;
+    display: flex;
+}
+
+* {
+    background-color: cyan;
+}
