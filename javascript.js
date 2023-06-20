@@ -8,22 +8,13 @@
 let round = 1;
 let playerScore = 0;
 let computerScore = 0;
-let numOfRounds = 3;
+let numOfRounds = 5;
 
 
 //select weapons
 const rockBtn = document.querySelector('#rock');
 rockBtn.addEventListener('click', () => {
     playRound('rock', getComputerChoice());
-    // playerWeapon='rock';
-    // if (playerScore <=3){
-    //     // console.log(`engaged!`);
-    //     playRound('rock', getComputerChoice());
-    // } else if (computerScore <= 3){
-    //     playRound('rock', getComputerChoice());
-    // } else {
-    //     console.log('not engaged');
-    // }
 })
 
 const paperBtn = document.querySelector('#paper');
@@ -73,7 +64,7 @@ function updateMessage(winner){
 
 function playRound(playerSelection, computerSelection){
     //run function if nobody has won
-    if ((playerScore < 3) && (computerScore < 3)){
+    if ((playerScore < numOfRounds) && (computerScore < numOfRounds)){
         let winner;
         //determine winner
         if (playerSelection === computerSelection){
@@ -109,7 +100,7 @@ function playRound(playerSelection, computerSelection){
         updateMessage(winner);
     }
 
-    if ((playerScore >= 3) || (computerScore >= 3)){
+    if ((playerScore >= numOfRounds) || (computerScore >= numOfRounds)){
         endGame();
     }
     
@@ -123,10 +114,10 @@ function endGame(){
     let link = document.createElement('a');
     link.setAttribute('href', '.');
     link.textContent = 'Replay?';
-    if (computerScore === 3) {
+    if (computerScore === numOfRounds) {
         gameMsg.textContent = `Computer Won.`;
         gameMsg.appendChild(link);
-    } else if (playerScore === 3){
+    } else if (playerScore === numOfRounds){
         gameMsg.textContent = `You won!!!`;
         gameMsg.appendChild(link);
     }
