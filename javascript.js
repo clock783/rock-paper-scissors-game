@@ -8,13 +8,22 @@
 let round = 1;
 let playerScore = 0;
 let computerScore = 0;
+let numOfRounds = 3;
 
 
 //select weapons
 const rockBtn = document.querySelector('#rock');
 rockBtn.addEventListener('click', () => {
-    // playerWeapon='rock';
     playRound('rock', getComputerChoice());
+    // playerWeapon='rock';
+    // if (playerScore <=3){
+    //     // console.log(`engaged!`);
+    //     playRound('rock', getComputerChoice());
+    // } else if (computerScore <= 3){
+    //     playRound('rock', getComputerChoice());
+    // } else {
+    //     console.log('not engaged');
+    // }
 })
 
 const paperBtn = document.querySelector('#paper');
@@ -64,7 +73,7 @@ function updateMessage(winner){
 
 function playRound(playerSelection, computerSelection){
     //run function if nobody has won
-    if ((playerScore < 3) || (computerScore < 3)){
+    if ((playerScore < 3) && (computerScore < 3)){
         let winner;
         //determine winner
         if (playerSelection === computerSelection){
@@ -109,7 +118,7 @@ function playRound(playerSelection, computerSelection){
 
 //end game will be called after first to three
 function endGame(){
-    //after first to three, declare Winner
+    //after first to numOfRounds, declare Winner
     let gameMsg = document.querySelector('#gameMsg');
     let link = document.createElement('a');
     link.setAttribute('href', '.');
@@ -121,8 +130,6 @@ function endGame(){
         gameMsg.textContent = `You won!!!`;
         gameMsg.appendChild(link);
     }
-
-    //disable buttons
 
 }
 
