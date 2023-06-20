@@ -33,16 +33,15 @@ scissorsBtn.addEventListener('click', () => {
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     randomNum = Math.floor(Math.random()*3);
-    // return choices[randomNum];
-    return 'rock';
+   return choices[randomNum];
 }
 
 function updateScores() {
     const myScore = document.querySelector('#myScore');
     myScore.textContent = `YOUR SCORE: ${playerScore}`;
 
-    const compScore = document.querySelector('#compScore');
-    compScore.textContent = `COMPUTER'S SCORE: ${computerScore}`;
+    const computerScoreMsg = document.querySelector('#computerScore');
+    computerScoreMsg.textContent = `COMPUTER'S SCORE: ${computerScore}`;
 }
 
 function updateRound(){
@@ -65,7 +64,7 @@ function updateMessage(winner){
 
 function playRound(playerSelection, computerSelection){
     //run function if nobody has won
-    if ((compScore < 3) || (playerScore < 3)){
+    if ((playerScore < 3) || (computerScore < 3)){
         let winner;
         //determine winner
         if (playerSelection === computerSelection){
@@ -101,11 +100,11 @@ function playRound(playerSelection, computerSelection){
         updateMessage(winner);
     }
 
-    if ((compScore === 3) || (playerScore === 3)){
+    if ((playerScore >= 3) || (computerScore >= 3)){
         endGame();
     }
     
-    return `Computer chose ${computerSelection}\nYou chose ${playerSelection}\nWinner is ${winner}\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`;
+    return;
 }
 
 //end game will be called after first to three
@@ -115,13 +114,16 @@ function endGame(){
     let link = document.createElement('a');
     link.setAttribute('href', '.');
     link.textContent = 'Replay?';
-    if (compScore === 3) {
+    if (computerScore === 3) {
         gameMsg.textContent = `Computer Won.`;
         gameMsg.appendChild(link);
     } else if (playerScore === 3){
         gameMsg.textContent = `You won!!!`;
         gameMsg.appendChild(link);
     }
+
+    //disable buttons
+
 }
 
 //game();
