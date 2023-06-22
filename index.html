@@ -11,41 +11,37 @@
     <div class="header">
         <!-- site header/banner -->
         <h1>Rock Paper Scissor</h1>
-        <ul>
-            <li><a href="#">Play</a></li>
-            <li><a href="#">How to Play</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
+        <h2>Best out of 3</h2>
     </div>
     
     <div>
         <!-- game play section-->
-        <h1 id="round"> Round 1</h1>
+        <h1 id="round"> ROUND 1</h1>
     </div>
-    <div>
-        <!-- player side -->
-        <h2>Player Side</h2>
-        <div id="myScore"> YOUR SCORE: 0</div>
-        <button id="rock">
-            <img src="img/rock.svg" alt="drawing of rock">
-        </button>
-        <button id="paper">
-            <img src="img/paper.svg" alt="drawing of paper">
-        </button>
-        <button id="scissors">
-            <img src="img/scissors.svg" alt="drawing of scissors">
-        </button>
-        <div id="playerMsg">Take your pick</div>
+    <div id="gameBox">
+        <div id="playerSide">
+            <!-- player side -->
+            <h2>Player Side</h2>
+            <div id="myScore"> YOUR SCORE: 0</div>
+            <button id="rock">
+                <img src="img/rock.svg" alt="drawing of rock">
+            </button>
+            <button id="paper">
+                <img src="img/paper.svg" alt="drawing of paper">
+            </button>
+            <button id="scissors">
+                <img src="img/scissors.svg" alt="drawing of scissors">
+            </button>
+            <div id="playerMsg">Take your pick</div>
+        </div>
+        <div id="compSide">
+            <!-- computer side -->
+            <h2>Computer Side</h2>
+            <div id="computerScore">COMPUTER'S SCORE: 0</div>
+            <div>Computer selected: </div>
+            <div id="compMsg">Waiting for Computer</div>
+        </div>
     </div>
-    <div>
-        <!-- computer side -->
-        <h2>Computer Side</h2>
-        <div id="computerScore">COMPUTER'S SCORE: 0</div>
-        <div>Computer selected: </div>
-        <div id="compMsg">Waiting for Computer</div>
-    </div>
-    <br>
-    <br>
     <div id="gameMsg">
         <!--
             gameplay message: can be:

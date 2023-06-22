@@ -1,22 +1,52 @@
+/* styles.css */
+
+/* Set gradient background */
+html {
+    height: 100%;
+    background: linear-gradient(.25turn, #4384c3, #31b3cb, #30b4cc);
+  }
+
+* {
+    color: white;
+    font-family: "Open Sans",Helvetica,sans-serif;
+}
+
+.header > *{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+#round {
+    text-align: center;
+}
+
+#gameBox {
+    display: flex;
+    border: 1px solid red;
+    justify-content: space-around;
+    padding: 30px;
+}
+
 img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
 }
 
 button {
-    border: 1px solid black;
+    border: none;
     cursor: pointer;
     appearance: none;
     background-color: inherit;
-    transition: transform .7s ease-in-out;
+    transition: transform .1s ease-in-out;
     margin-left:0px;
+    padding: 0px;
 }
 
-.header > * {
-    border: 1px solid red;
-    display: flex;
+button:hover {
+    transform: scale(1.1);
 }
 
-* {
-    background-color: cyan;
-}
+  

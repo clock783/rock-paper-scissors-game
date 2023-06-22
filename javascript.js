@@ -48,7 +48,7 @@ function updateScores() {
 
 function updateRound(){
     round += 1;
-    roundX.textContent = `Round ${round}`;
+    roundX.textContent = `ROUND ${round}`;
 }
 
 function updateMessage(winner){
