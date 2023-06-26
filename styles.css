@@ -30,7 +30,7 @@ html {
     padding: 30px;
 }
 
-img {
+.button-img {
     width: 120px;
     height: 120px;
 }
@@ -49,4 +49,26 @@ button:hover {
     transform: scale(1.1);
 }
 
-  
+#gameMsg {
+    text-align: center;
+    border: 1px solid green;
+    padding: 30px 10px;
+    margin: 0px;
+}
+
+#github-logo {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+#footer{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}

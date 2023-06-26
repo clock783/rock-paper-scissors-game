@@ -24,13 +24,13 @@
             <h2>Player Side</h2>
             <div id="myScore"> YOUR SCORE: 0</div>
             <button id="rock">
-                <img src="img/rock.svg" alt="drawing of rock">
+                <img class="button-img" src="img/rock.svg" alt="drawing of rock">
             </button>
             <button id="paper">
-                <img src="img/paper.svg" alt="drawing of paper">
+                <img class="button-img" src="img/paper.svg" alt="drawing of paper">
             </button>
             <button id="scissors">
-                <img src="img/scissors.svg" alt="drawing of scissors">
+                <img class="button-img" src="img/scissors.svg" alt="drawing of scissors">
             </button>
             <div id="playerMsg">Take your pick</div>
         </div>
@@ -38,23 +38,21 @@
             <!-- computer side -->
             <h2>Computer Side</h2>
             <div id="computerScore">COMPUTER'S SCORE: 0</div>
-            <div>Computer selected: </div>
             <div id="compMsg">Waiting for Computer</div>
         </div>
     </div>
-    <div id="gameMsg">
+    <h2 id="gameMsg">
         <!--
             gameplay message: can be:
             Tie!
             Computer won this round
             You won this round
         -->
-        Gameplay Message: 
-    </div>
-    <div>
+        
+    </h2>
+    <div id="footer">
         <!-- bottom banner -->
-        <br>
-        Copyright &copy; clock783 <a href="https://github.com/clock783">Github Link</a>
+        Copyright &copy; clock783 <a href="https://github.com/clock783" target="_blank" rel="noopener noreferrer"><img id="github-logo" src="./img/github-mark.svg" alt="github-logo-black"></a>
     </div>
     <script src="javascript.js" target="_blank" rel="noopener noreferrer"></script>
 </body>

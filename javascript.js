@@ -55,11 +55,11 @@ function updateMessage(winner){
     //update gameplay message
     let gameMsg = document.querySelector('#gameMsg');
     if (winner === 'none'){
-        gameMsg.textContent = `Tie!`;
+        gameMsg.textContent = `TIE!`;
     } else if (winner === 'player'){
-        gameMsg.textContent = `You won this round 😀`;
+        gameMsg.textContent = `YOU WON THIS ROUND 😀`;
     } else if (winner === 'computer'){
-        gameMsg.textContent = `Computer won this round 😞`;
+        gameMsg.textContent = `COMPUTER WON THIS ROUND 😞`;
     }
 }
 
