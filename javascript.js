@@ -51,7 +51,13 @@ function updateRound(){
     roundX.textContent = `ROUND ${round}`;
 }
 
-function updateMessage(winner){
+function updateMessage(playerChoice, computerChoice, winner){
+    //update player and computer messages
+    let playerMessage = document.querySelector('#playerMsg');
+    playerMessage.textContent = `Round ${round}: You chose ${playerChoice}`;
+
+    let computerMessage = document.querySelector('#compMsg');
+    computerMessage.textContent = `Round ${round}: Computer chose ${computerChoice}`
     //update gameplay message
     let gameMsg = document.querySelector('#gameMsg');
     if (winner === 'none'){
@@ -96,9 +102,10 @@ function playRound(playerSelection, computerSelection){
         } else if (winner === 'computer'){
             computerScore += 1;
         }
+        updateMessage(playerSelection, computerSelection,winner);
+        updateGreyCompChoice(computerSelection);
         updateScores();
         updateRound();
-        updateMessage(winner);
     }
 
     if ((playerScore >= numOfRounds) || (computerScore >= numOfRounds)){
@@ -107,6 +114,25 @@ function playRound(playerSelection, computerSelection){
     
     return;
 }
+
+function updateGreyCompChoice(computerChoice){
+    // function will edit class of computer choice
+    // so it won't be greyed out. CSS styling will indicate
+    // computer's choice.
+    computerImgs = document.querySelectorAll('.comp-img');
+    computerImgs.forEach(element => {
+        element.classList.add('greyOutCompImgs');
+    });
+
+    document.getElementById(`comp-${computerChoice}`).classList.remove('greyOutCompImgs');
+
+
+    // if (computerChoice === 'rock'){
+        
+    // }
+
+}
+
 
 //end game will be called after first to three
 function endGame(){

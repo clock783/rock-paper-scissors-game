@@ -40,14 +40,14 @@ html {
     margin-top: 20px;
 }
 
-.button-img {
+.button-img, .comp-img {
     width: 120px;
     height: 120px;
 }
 
 .greyOutCompImgs{
-    opacity: .6;
-    filter: alpha(opacity=40);  
+    opacity: .3;
+    /* filter: alpha(opacity=40);   */
 }
 
 button {
