@@ -25,14 +25,18 @@ html {
 
 #gameBox {
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: space-around;
     padding: 30px;
 }
 
+.endGameGreyBox{
+    filter: opacity(10%);
+}
+
 #playerSide > *, #compSide > * {
     /* display: flex; */
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
     text-align: center;
 }
 
@@ -66,7 +70,7 @@ button:hover {
 
 #gameMsg {
     text-align: center;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     padding: 30px 10px;
     margin: 0px;
 }
@@ -83,7 +87,7 @@ button:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     justify-content: center;
     align-items: center;
 }

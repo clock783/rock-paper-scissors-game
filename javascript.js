@@ -125,12 +125,6 @@ function updateGreyCompChoice(computerChoice){
     });
 
     document.getElementById(`comp-${computerChoice}`).classList.remove('greyOutCompImgs');
-
-
-    // if (computerChoice === 'rock'){
-        
-    // }
-
 }
 
 
@@ -149,6 +143,12 @@ function endGame(){
         gameMsg.appendChild(link);
     }
     roundX.textContent = 'Game Over';
+
+    toGrey = document.querySelectorAll('.greyAtEnd')
+    toGrey.forEach(element => {
+        element.classList.add("endGameGreyBox");
+    });
+    // document.getElementByClass("grey").classList.add("endGameGreyBox");
 
 }
 
