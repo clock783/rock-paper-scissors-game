@@ -4,11 +4,13 @@
 html {
     height: 100%;
     background: linear-gradient(.25turn, #176fc6, #31b3cb, #3ea8ba);
+
   }
 
 * {
     color: white;
     font-family: "Open Sans",Helvetica,sans-serif;
+    /* border: solid 1px red; */
 }
 
 .header > *{
